@@ -18,7 +18,63 @@
 5.Builder模式不适合创建差异性很大的产品类产品内部变化复杂，会导致需要定义很多具体建造者类实现变化，增加项目中类的数量，增加系统的理解难度和运行成本.  
 6.需要生成的产品对象有复杂的内部结构，这些产品对象具备共性.
 
-## demo
-```go
+## 例子
+
+如果你有使用过orm，那你一定不陌生。如果你对orm还不清楚，那我举一个例子你就清楚了。  
 
 ```
+select * from user where user_id = 1;
+```  
+
+如果让你使用go来封装实现你会怎么做?  
+
+### 一个数据库对象  
+
+```go
+// 建立一个db对象
+type DB struct {
+	Table  interface{}
+	Filter []string
+}
+```  
+
+### new  
+
+```go 
+// 先创建一个db对象
+func NewOrm() *DB {
+	return &DB{}
+}
+```  
+
+### 相关语句
+
+```go
+// table 相关
+func (d *DB) QueryTable(i interface{}) *DB {
+	d.Table = i
+	return d
+}
+
+// where 语句
+func (d *DB) Where(field string, v interface{}) *DB {
+	s := fmt.Sprintf("%s %v", field, v)
+	d.Filter = append(d.Filter, s)
+	return d
+}
+
+// 查询all
+func (d *DB) All() *DB {
+	return d
+}
+
+```   
+
+### 效果
+
+```go
+o := NewOrm()
+o.QueryTable("user").Where("user_id = ", 1).All()
+```
+
+这里并没有对里面的逻辑进行编写，真实的orm并不是这样的。但是我们要理解的是orm采用了建造者模式。
