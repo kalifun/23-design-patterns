@@ -1,6 +1,9 @@
 package singleton
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
 // 定义一个接口
 type LoadBalancing interface {
@@ -25,8 +28,18 @@ func (s *LoadBalancingType) GetNode() string {
 }
 
 var lb LoadBalancing
+var once = &sync.Once{}
 
 func GetLoadBalancing() LoadBalancing {
+	return lb
+}
+
+func LazyGetLoadBalancing() LoadBalancing {
+	if lb == nil {
+		once.Do(func() {
+			lb = &LoadBalancingType{}
+		})
+	}
 	return lb
 }
 
