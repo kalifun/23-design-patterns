@@ -1,8 +1,20 @@
 # Golang设计模式
 ## 创建型模式
-- [x] 简单工厂模式  [SimpleFactory](SimpleFactory/README.md)  
+
+| 类型 | 名称 | 状态 | 链接 |
+|:--:| :--: | :--: | :--: |
+|创建型模式| 简单工厂模式 | :heavy_check_mark: | [SimpleFactory](simple_factory/README.md) |
+| | 抽象工厂模式 | :heavy_check_mark: | [AbstractFactory](AbstractFactory/README.md) |
+| | 单例模式 | :heavy_check_mark: | [Singleton](singleton/README.md) |
+| | 建造者模式 | :heavy_check_mark: | [Builder](Builder/README.md) |
+| | 原型模式 | :heavy_multiplication_x: | [Prototype](Prototype/README.md)|
+
+
+## TODO
+
+- [x] 简单工厂模式  [SimpleFactory](simple_factory/README.md)  
 - [x] 抽象工厂模式  [AbstractFactory](AbstractFactory/README.md)  
-- [x] 单例模式  [Singleton](Singleton/README.md)
+- [x] 单例模式  [Singleton](singleton/README.md)
 - [x] 建造者模式 [Builder](Builder/README.md)
 - [ ] 原型模式  [Prototype](Prototype/README.md)
 
