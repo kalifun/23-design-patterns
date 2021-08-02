@@ -1,13 +1,6 @@
-package main
+package simplefactory
 
 import "fmt"
-
-func main() {
-	// A car has four wheels
-	NewTheTrafficTools("c").ToGetParts()
-	// A bicycle has two wheels
-	NewTheTrafficTools("b").ToGetParts()
-}
 
 type TheTrafficTools interface {
 	ToGetParts()

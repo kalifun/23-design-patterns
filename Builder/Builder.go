@@ -1,67 +1,32 @@
-package main
+package builder
 
 import "fmt"
 
-type Person struct {
-	Type string
-	Sex  string
+// 建立一个db对象
+type DB struct {
+	Table  interface{}
+	Filter []string
 }
 
-func (p *Person) SetType(s string) {
-	p.Type = s
+// 先创建一个db对象
+func NewOrm() *DB {
+	return &DB{}
 }
 
-func (p *Person) GetType() string {
-	return p.Type
+// table 相关
+func (d *DB) QueryTable(i interface{}) *DB {
+	d.Table = i
+	return d
 }
 
-func (p *Person) SetSex(s string) {
-	p.Sex = s
+// where 语句
+func (d *DB) Where(field string, v interface{}) *DB {
+	s := fmt.Sprintf("%s %v", field, v)
+	d.Filter = append(d.Filter, s)
+	return d
 }
 
-func (p *Person) GetSex() string {
-	return p.Sex
-}
-
-type BuildPerson interface {
-	BuildType()
-	BuildSex()
-	CreatePerson() *Person
-}
-
-type HeroHuman struct {
-	person *Person
-}
-
-func CreateHeroHuman() *HeroHuman {
-	return &HeroHuman{person: new(Person)}
-}
-
-func (hero *HeroHuman) BuildType() {
-	hero.person.SetType("Hero")
-}
-
-func (hero *HeroHuman) BuildSex() {
-	hero.person.SetSex("Male")
-}
-
-func (hero *HeroHuman) CreatePerson() *Person {
-	return hero.person
-}
-
-type PersonController struct {
-}
-
-func (pc *PersonController) construct(b BuildPerson) *Person {
-	b.BuildSex()
-	b.BuildType()
-	return b.CreatePerson()
-}
-
-func main() {
-	h := CreateHeroHuman()
-	c := new(PersonController)
-	f := c.construct(h)
-	fmt.Println(f.Sex)
-	fmt.Println(f.GetType())
+// 查询all
+func (d *DB) All() *DB {
+	return d
 }
