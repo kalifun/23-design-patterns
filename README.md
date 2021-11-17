@@ -8,7 +8,7 @@
 | | 抽象工厂模式 | :heavy_check_mark: | [AbstractFactory](AbstractFactory/README.md) |
 | | 单例模式 | :heavy_check_mark: | [Singleton](singleton/README.md) |
 | | 建造者模式 | :heavy_check_mark: | [Builder](Builder/README.md) |
-| | 原型模式 | :heavy_multiplication_x: | [Prototype](prototype/README.md)|
+| | 原型模式 | :heavy_check_mark: | [Prototype](prototype/README.md)|
 
 ## 结构型模式
 
