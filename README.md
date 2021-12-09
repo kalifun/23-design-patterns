@@ -33,3 +33,4 @@
 [Blog jlb0906](https://gocore.net)  
 [大前端圈](https://www.jianshu.com/p/3d1c9ffb0a28)  
 [Java设计模式](http://c.biancheng.net/design_pattern/)  
+[深入设计模式](https://refactoringguru.cn/design-patterns)

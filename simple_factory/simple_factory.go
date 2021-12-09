@@ -1,32 +1,54 @@
 package simplefactory
 
-import "fmt"
-
+// 交通工具接口
 type TheTrafficTools interface {
-	ToGetParts()
+	SetTraffic(name string)
+	SetPart(p Part)
 }
 
+// 零件结构
+type Part struct {
+	Name string
+	Num  uint64
+}
+
+type traffic struct {
+	Name  string // 交通工具名称
+	Parts []Part // 拥有的零件
+}
+
+func (t *traffic) SetTraffic(name string) {
+	t.Name = name
+}
+
+func (t *traffic) SetPart(p Part) {
+	t.Parts = append(t.Parts, p)
+}
+
+// 汽车
 type Car struct {
+	traffic
 }
 
-func (c *Car) ToGetParts() {
-	fmt.Println("A car has four wheels")
-}
-
+// 自行车
 type Bicycle struct {
+	traffic
 }
 
-func (b *Bicycle) ToGetParts() {
-	fmt.Println("A bicycle has two wheels")
+func NewCar(name string) TheTrafficTools {
+	return &Car{
+		traffic: traffic{
+			Name:  name,
+			Parts: []Part{},
+		},
+	}
 }
 
-func NewTheTrafficTools(name string) TheTrafficTools {
-	switch name {
-	case "c":
-		return &Car{}
-	case "b":
-		return &Bicycle{}
-	default:
-		return nil
+func NewBicycle(name string) TheTrafficTools {
+	return &Bicycle{
+		traffic: traffic{
+			Name:  name,
+			Parts: []Part{},
+		},
 	}
 }
