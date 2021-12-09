@@ -10,6 +10,7 @@
 | | 建造者模式 | :heavy_check_mark: | [Builder](Builder/README.md) |
 | | 原型模式 | :heavy_check_mark: | [Prototype](prototype/README.md)|
 
+
 ## 结构型模式
 
 | 类型 | 名称 | 状态 | 链接 |
