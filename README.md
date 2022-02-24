@@ -20,6 +20,7 @@
 | | 装饰器模式 | :heavy_multiplication_x: | [Decorator](decorator/README.md)  |
 | | 组合模式 | :heavy_multiplication_x: | [Composite](composite/README.md)  |
 | | 外观模式 | :heavy_multiplication_x: | [Facade](facade/README.md)  |
+| | 享元模式 | :heavy_multiplication_x: | [Flyweight](flyweight/README.md)  |
 
 ## TODO
 
