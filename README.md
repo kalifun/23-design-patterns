@@ -18,6 +18,7 @@
 |结构型模式 | 代理模式 | :heavy_check_mark: | [ProxyPattern](proxypattern/README.md) |
 | | 桥接模式 | :heavy_multiplication_x: | [Bridge](bridge/README.md) |
 | | 装饰器模式 | :heavy_multiplication_x: | [Decorator](decorator/README.md)  |
+| | 组合模式 | :heavy_multiplication_x: | [Composite](composite/README.md)  |
 
 ## TODO
 
