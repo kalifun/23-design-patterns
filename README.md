@@ -22,6 +22,13 @@
 | | 外观模式 | :heavy_multiplication_x: | [Facade](facade/README.md)  |
 | | 享元模式 | :heavy_multiplication_x: | [Flyweight](flyweight/README.md)  |
 
+## 行为模式
+
+| 类型 | 名称 | 状态 | 链接 |
+|:--:| :--: | :--: | :--: |
+|行为模式 | 责任链模式 | :heavy_multiplication_x: | [Chain of Command](chain/README.md) |
+| | 命令模式 | :heavy_multiplication_x: | [Command](command/README.md) |
+
 ## TODO
 
 - [x] 简单工厂模式  [SimpleFactory](simple_factory/README.md)  
