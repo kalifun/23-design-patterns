@@ -19,6 +19,7 @@
 | | 桥接模式 | :heavy_multiplication_x: | [Bridge](bridge/README.md) |
 | | 装饰器模式 | :heavy_multiplication_x: | [Decorator](decorator/README.md)  |
 | | 组合模式 | :heavy_multiplication_x: | [Composite](composite/README.md)  |
+| | 外观模式 | :heavy_multiplication_x: | [Facade](facade/README.md)  |
 
 ## TODO
 
